@@ -58,7 +58,12 @@ a {
 ul {
     list-style: none;
 }
-
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--red);
+    color: white;
+}
 /*  HEADER === */
 
 .header {
@@ -480,9 +485,69 @@ button.btn:hover {
 }
 
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--red);
-    color: white;
+/* ======
+///////****DETALLES.HTML=======*/
+
+
+#trailer {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 400px;
+  object-fit: cover;
+}
+.detalle{
+    margin:7rem;
+    padding: 4rem;
+}
+.detalle-info h1{
+    color: var(--red);
+    margin-top: 4rem;
+    
+}
+
+.match{
+    color: #46d369;
+  font-weight: bold;
+}
+.year,
+.age,
+.seasons {
+  background-color: rgba(255,255,255,0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+.descripcion {
+  margin: 1rem 0;
+  line-height: 1.6;
+  margin: 3rem;
+  
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.info-grid strong {
+  color: var(--color-primary);
+}
+
+.btn-detalle {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+
+  background-color: var(--form-shadow);
+  color: var(--form-bg);
+
+  border-radius: 5px;
+  font-weight: bold;
+
+  display: inline-block;
+}
+
+.btn-detalle:hover {
+  background-color: #ddd;
 }

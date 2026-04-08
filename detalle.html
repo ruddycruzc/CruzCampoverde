@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle - F5Flix</title>
+
+    <link rel="stylesheet" href="m4play.css">
+    <link rel="icon" href="src/images/Logo.png">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar" aria-label="Navegación principal">
+
+
+            <a href="index.html" class="logo">
+                <img src="src/images/F5-Logo.png" alt="F5Flix logo">
+            </a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">PELÍCULAS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">SERIES</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">LO MÁS VISTO</a>
+                </li>
+                <li class="nav-item">
+                    <a href="registro.html" class="nav-link">REGISTRO</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contacto.html" class="nav-link">CONTACTO</a>
+                </li>
+            </ul>
+
+            <div class="user-actions">
+                <a href="login.html">
+                    <img src="src/images/user-regular.svg" alt="Iniciar sesión">
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="detalle">
+
+            <!-- IMAGEN -->
+            <figure class="detalle-img">
+
+                <video controls id="trailer" poster="src/images/films/strangerthings.jpg">
+                    <source src="src/video/Stranger Things T1.mp4" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+
+            </figure>
+            <!-- INFO -->
+            <article class="detalle-info">
+
+                <h1>Stranger Things</h1>
+
+                <!-- META -->
+                <div class="meta-info">
+                    <span class="match">98% relevante</span>
+                    <span class="year">2016</span>
+                    <span class="age">+16</span>
+                    <span class="seasons">5 temporadas</span>
+                </div>
+
+                <!-- DESCRIPCIÓN -->
+                <p class="descripcion">
+                    Cuando un niño desaparece, un pequeño pueblo descubre un misterio relacionado con experimentos
+                    secretos,
+                    fuerzas sobrenaturales y una niña con poderes extraordinarios. 
+                </p>
+
+                <!-- DETALLES EN COLUMNAS -->
+                <div class="info-grid">
+
+                    <p><strong>Género:</strong> Ciencia ficción, Terror, Drama</p>
+
+                    <p><strong>Creadores:</strong> Hermanos Duffer</p>
+
+                    <p><strong>Actores:</strong> Winona Ryder, David Harbour, Millie Bobby Brown</p>
+
+                    <p><strong>Duración:</strong> 45-60 min</p>
+
+                    <p><strong>Ambientación:</strong> Años 80, Hawkins (Indiana)</p>
+
+                </div>
+
+                <!-- BOTÓN -->
+                <a href="#play" class="btn-detalle">▶ Reproducir</a>
+
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 F5Flix</p>
+    </footer>
+
+</body>
+
+</html>
