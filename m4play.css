@@ -340,9 +340,26 @@ h2::after {
  margin-top: 0.6rem;
 }
 .meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   font-size: 0.8rem;
   opacity: 0.8;
   margin-bottom: 0.3rem;
+}
+.stars {
+  color: gold;
+  font-size: 0.9rem;
+}
+.rating {
+  font-weight: bold;
+}
+
+
+.age {
+  background-color: #444;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
 }
 
 /* =======
