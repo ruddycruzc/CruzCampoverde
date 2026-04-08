@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Roboto:wght@900&display=swap&display=swap');
 
 :root {
-    --bg-color: #0f0f1a;
+    --bg-color:#e5e5e5 ;
 
     --color-primary: #e35c27;
     --secondary--color: #595959;
 
     --color--card: #1c1c2e;
-    --text-color: #e5e5e5;
+    --text-color:#0f0f1a ;
 
     --body-padding: 1rem;
     --body-margin: 2rem;
@@ -164,4 +164,91 @@ h2::after {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
   gap: 1.5rem;
+}
+
+/*===SECCION SERIES===*/
+
+.series {
+  margin-bottom: 3rem;
+}
+.series h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.series h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin-top: 0.5rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--color-card);
+
+  transition: transform 0.3s ease;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  opacity: 0;
+
+  transition: 0.3s;
+}
+
+
+
+.btn-card {
+  display: inline-block;
+  margin-top: 0.5rem;
+
+  background-color: var(--color-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+
+  transition: 0.3s;
+}
+
+.btn-card:hover {
+  background-color: var(--color-secondary);
+}
+.card-content p {
+  overflow: hidden;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
 }
