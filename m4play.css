@@ -92,30 +92,45 @@ footer {
 /* ===NAVBAR===*/
 .navbar {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+    gap: 1rem;
+
 
     padding: 1rem 2rem;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
 .nav-list {
+
+    display: none;
+    /*Oculto en movil*/
+    width: 100%;
+    list-style: none;
+    flex-basis: 100%;
+    /* Hace que el menú baje a la siguiente línea */
+
+}
+
+.nav-list.active {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    text-align: center;
 }
+
 
 .nav-item {
     position: relative;
 }
 
-.nav-list {
-
-    gap: 1rem;
-
+.nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 
@@ -126,7 +141,14 @@ footer {
     border-radius: .5rem;
 }
 
+
 /*==IMAGEN DE LOGIN*/
+.user-actions {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+}
+
 .user-actions img {
     width: 35px;
     cursor: pointer;
@@ -140,19 +162,42 @@ footer {
 
 /* ===MAIN== */
 .hero {
+    position: relative;
     height: auto;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
+    color: white;
+
+    background-image: url("src/images/Logo.png");
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(58, 58, 58, 0.5);
+    /* ajusta transparencia */
+
+    z-index: 1;
+}
+
+.hero>* {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
-    font-size: 2rem 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
     padding: 1rem;
 }
 
@@ -160,6 +205,7 @@ footer {
     max-width: 600px;
     margin-bottom: 1.5rem;
 }
+
 
 h2 {
     font-size: 1.8rem;
@@ -183,7 +229,7 @@ h2::after {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(1fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
@@ -220,13 +266,22 @@ h2::after {
     display: grid;
     grid-auto-flow: column;
     /* 🔥 clave */
-    grid-auto-columns: 250px;
+    grid-auto-columns: 80%;
     /* ancho de cada card */
     gap: 1.5rem;
 
     overflow-x: auto;
     /* permite scroll */
     padding-bottom: 1rem;
+}
+
+.series .grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.series .grid::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 10px;
 }
 
 
@@ -271,6 +326,7 @@ h2::after {
 .card img {
 
     width: 100%;
+    height: 200px;
     object-fit: cover;
 
     transition: transform 0.4s ease;
@@ -280,15 +336,8 @@ h2::after {
     transform: scale(1.05);
 }
 
-
-.card a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-}
-
 .card:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: translateY(-5px);
     z-index: 2;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
@@ -299,7 +348,7 @@ h2::after {
     position: absolute;
     inset: 0;
 
-    background: rgba(223, 213, 213, 0.7);
+    background: rgba(0, 0, 0, 0.3);
     color: #0f0f1a;
     opacity: 0;
 
@@ -322,7 +371,7 @@ h2::after {
     line-clamp: 3;
     font-size: 0.9rem;
     line-height: 1.4;
-    color: #171515;
+    color: var(--text-color);
     transition: color 0.3s;
 
 }
@@ -450,27 +499,30 @@ textarea:focus {
     margin-right: 0.4rem;
     accent-color: var(--color-primary);
 }
-.checkbox{
+
+.checkbox {
     color: var(--color-primary);
 }
+
 /* BOTÓN */
-.form-actions{
+.form-actions {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.btn, 
+.btn,
 .btn-secundario {
-    display: flex;
+    display: inline-block;
+    text-align: center;
 
     margin-top: 1rem;
-    
+
 
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     border: none;
 
-    padding: 1.3rem 2rem;
+    padding: 0.7rem 1rem;
     border-radius: 8px;
 
     font-weight: bold;
@@ -484,6 +536,7 @@ textarea:focus {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(227, 85, 8, 0.4);
 }
+
 .btn-secundario:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(227, 85, 8, 0.4);
@@ -500,7 +553,7 @@ textarea:focus {
     background: #1c1c2e;
     border-radius: 15px;
     box-shadow: var(--form-shadow);
-    color:#d6d6e0;
+    color: #d6d6e0;
 }
 
 .contacto h2 {
@@ -528,7 +581,7 @@ textarea:focus {
 }
 
 .detalle {
-      margin: 2rem 1rem;
+    margin: 2rem 1rem;
     padding: 1rem;
 }
 
@@ -552,9 +605,9 @@ textarea:focus {
 }
 
 .descripcion {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     line-height: 1.6;
-    margin: 3rem;
+
 
 }
 
@@ -596,13 +649,33 @@ textarea:focus {
 @media (min-width: 768px) {
 
     /* NAV */
-    .navbar {
-        flex-direction: row;
+    .nav-toggle {
+        display: none;
     }
 
-    .nav-list {
-        flex-direction: row;
+    .navbar {
+        flex-wrap: nowrap;
     }
+
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+
+        background-color: var(--red);
+        width: auto;
+        gap: 2rem;
+        margin-left: 2rem;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    .user-actions a[href="#usuario"] {
+        display: inline-flex;
+    }
+
 
     /* GRID */
     .grid {
@@ -612,14 +685,10 @@ textarea:focus {
     .series .grid {
         grid-auto-columns: 250px;
     }
-}
 
-    /* DETALLE */
     .detalle {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        align-items: center;
     }
 
     /* FORM */
@@ -627,10 +696,21 @@ textarea:focus {
         flex-direction: row;
         justify-content: space-between;
     }
-
+}
 
 
 @media (min-width: 1024px) {
+    .header {
+        flex-wrap: nowrap;
+    }
+
+    .nav-list {
+        display: flex;
+        justify-content: space-evenly;
+
+        gap: 2rem;
+
+    }
 
     .grid {
         grid-template-columns: repeat(4, 1fr);
