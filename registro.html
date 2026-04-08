@@ -14,7 +14,7 @@
 
 
     <header class="header">
-          <nav class="navbar" aria-label="Navegación principal">
+        <nav class="navbar" aria-label="Navegación principal">
 
 
             <a href="index.html" class="logo">
@@ -64,7 +64,7 @@
             <form action="#" method="GET" class="formulario">
 
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Nombre de usuario</label>
                     <input type="text" id="nombre" name="nombre" required>
                 </div>
 
@@ -74,12 +74,21 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="contraseña">Contraseña</label>
+                    <input type="contraseña" id="contraseña" name="contraseña" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <label for="confirmar-contraseña">Repetir contraseña</label>
+                    <input type="contraseña" id="confirmar-contraseña" name="confirmar-contraseña" required>
+                </div>
+
+                <div class="form-group">
                     <label for="edad">Edad</label>
                     <input type="number" id="edad" name="edad">
                 </div>
 
                 <div class="form-group">
-                    <label for="fecha">Fecha de registro</label>
+                    <label for="fecha">Fecha de nacimiento</label>
                     <input type="date" id="fecha" name="fecha">
                 </div>
 
@@ -98,23 +107,32 @@
                     <label><input type="checkbox" name="pref" value="series"> Series</label>
                     <label><input type="checkbox" name="pref" value="documentales"> Documentales</label>
                 </div>
-
                 <div class="form-group">
-                    <label for="pais">País</label>
-                    <select id="pais" name="pais">
+                    <label for="idioma">Idioma</label>
+                    <select id="idioma" name="idioma" required>
                         <option value="">Selecciona</option>
-                        <option value="espana">España</option>
-                        <option value="mexico">México</option>
-                        <option value="argentina">Argentina</option>
+                        <option value="es">Español</option>
+                        <option value="en">Inglés</option>
+                        <option value="fr">Francés</option>
                     </select>
                 </div>
-
                 <div class="form-group">
-                    <label for="comentarios">Comentarios</label>
-                    <textarea id="comentarios" name="comentarios"></textarea>
+                    <label for="foto">Foto de perfil</label>
+                    <input type="file" id="foto" name="foto" accept="image/*"> <!--Es simplemente decorativo ya que GET no admite archivos-->
                 </div>
 
-                <button type="submit" class="btn">Registrarse</button>
+                <div class="form-group checkbox">
+                    <label>
+                        <input type="checkbox" name="privacidad" required>
+                        Acepto las políticas de privacidad
+                    </label>
+                </div>
+
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Registrarse</button>
+                    <button type="planes" class="btn-secundario">Ver planes</a>
+                </div>
 
             </form>
 

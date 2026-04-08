@@ -4,10 +4,10 @@
     --bg-color: #e5e5e5;
 
     --color-primary: #e35c27;
-    --color-secondary: #595959;
+    --color-secondary: #2a2a40;
 
 
-    --color--card: #d6d6e0;
+    --color-card: #d6d6e0;
     --text-color: #0f0f1a;
 
     --body-padding: 1rem;
@@ -58,12 +58,14 @@ a {
 ul {
     list-style: none;
 }
+
 footer {
     text-align: center;
     padding: 1rem;
     background-color: var(--red);
     color: white;
 }
+
 /*  HEADER === */
 
 .header {
@@ -180,13 +182,15 @@ h2::after {
     grid-template-columns: repeat(3, 2fr);
     gap: 1.5rem;
 }
+
 .grid:hover .card {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
 .grid .card:hover {
-  opacity: 1;
+    opacity: 1;
 }
+
 /*===SECCION SERIES===*/
 
 .series {
@@ -208,14 +212,17 @@ h2::after {
     margin-top: 0.5rem;
 }
 
-    .series .grid {
-  display: grid;
-  grid-auto-flow: column;          /* 🔥 clave */
-  grid-auto-columns: 250px;        /* ancho de cada card */
-  gap: 1.5rem;
+.series .grid {
+    display: grid;
+    grid-auto-flow: column;
+    /* 🔥 clave */
+    grid-auto-columns: 250px;
+    /* ancho de cada card */
+    gap: 1.5rem;
 
-  overflow-x: auto;                /* permite scroll */
-  padding-bottom: 1rem;
+    overflow-x: auto;
+    /* permite scroll */
+    padding-bottom: 1rem;
 }
 
 
@@ -239,7 +246,6 @@ h2::after {
     gap: 0.5rem;
 
     height: 100%;
-    /* 🔥 importante */
 }
 
 .card-content h3 {
@@ -247,20 +253,20 @@ h2::after {
     background-color: var(--red);
     color: white;
     padding: 0.5rem;
-    
+
 
     font-size: 1rem;
 
     transition: background-color 0.3s;
 }
+
 .card:hover h3 {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 
 .card img {
 
     width: 100%;
-    height: 100%;
     object-fit: cover;
 
     transition: transform 0.4s ease;
@@ -316,8 +322,9 @@ h2::after {
     transition: color 0.3s;
 
 }
+
 .card:hover p {
-  color: rgb(216, 33, 33);
+    color: rgb(216, 33, 33);
 }
 
 /* ======BOTON DENTRO DE CARDS===== */
@@ -340,31 +347,34 @@ h2::after {
 }
 
 .badge {
-  font-size: 0.8rem;
-  letter-spacing: 1px;
- margin-top: 0.6rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-top: 0.6rem;
 }
+
 .meta {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-  font-size: 0.8rem;
-  opacity: 0.8;
-  margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 0.3rem;
 }
+
 .stars {
-  color: gold;
-  font-size: 0.9rem;
+    color: gold;
+    font-size: 0.9rem;
 }
+
 .rating {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 
 .age {
-  background-color: #444;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
+    background-color: #444;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
 }
 
 /* =======
@@ -375,9 +385,10 @@ h2::after {
     margin: 3rem auto;
     padding: 2rem;
 
-    background: #e15729;
+    background: #1c1c2e;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--form-shadow);
+    color: #d6d6e0;
 }
 
 /* TÍTULO */
@@ -401,11 +412,6 @@ h2::after {
     gap: 0.3rem;
 }
 
-/* LABELS */
-label {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
 
 /* INPUTS */
 input,
@@ -415,13 +421,13 @@ textarea {
     border-radius: 8px;
     border: 1px solid transparent;
 
-    background-color: var(--color-secondary);
+    background-color: #2a2a40;
     color: rgb(246, 246, 246);
 
     transition: all 0.3s ease;
 }
 
-/* EFECTO FOCUS (clave visual) */
+/* EFECTO FOCUS */
 input:focus,
 select:focus,
 textarea:focus {
@@ -436,15 +442,27 @@ textarea:focus {
     margin-right: 0.4rem;
     accent-color: var(--color-primary);
 }
-
+.checkbox{
+    color: var(--color-primary);
+}
 /* BOTÓN */
-button.btn {
+.form-actions{
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+}
+
+.btn, 
+.btn-secundario {
+    display: flex;
+
     margin-top: 1rem;
+    
 
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     border: none;
 
-    padding: 0.8rem;
+    padding: 1.3rem 2rem;
     border-radius: 8px;
 
     font-weight: bold;
@@ -454,7 +472,11 @@ button.btn {
 }
 
 /* HOVER BOTÓN */
-button.btn:hover {
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(227, 85, 8, 0.4);
+}
+.btn-secundario:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(227, 85, 8, 0.4);
 }
@@ -467,9 +489,10 @@ button.btn:hover {
     margin: 3rem auto;
     padding: 2rem;
 
-    background: var(--form-bg);
+    background: #1c1c2e;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(107, 96, 96, 0.5);
+    box-shadow: var(--form-shadow);
+    color:#d6d6e0;
 }
 
 .contacto h2 {
@@ -490,64 +513,71 @@ button.btn:hover {
 
 
 #trailer {
-  width: 100%;
-  border-radius: 10px;
-  max-height: 400px;
-  object-fit: cover;
-}
-.detalle{
-    margin:7rem;
-    padding: 4rem;
-}
-.detalle-info h1{
-    color: var(--red);
-    margin-top: 4rem;
-    
+    width: 100%;
+    border-radius: 10px;
+    max-height: 400px;
+    object-fit: cover;
 }
 
-.match{
-    color: #46d369;
-  font-weight: bold;
+.detalle {
+    margin: 7rem;
+    padding: 4rem;
 }
+
+.detalle-info h1 {
+    color: var(--red);
+    margin-top: 4rem;
+
+}
+
+.match {
+    color: #46d369;
+    font-weight: bold;
+}
+
 .year,
 .age,
 .seasons {
-  background-color: rgba(255,255,255,0.1);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
 }
-.descripcion {
-  margin: 1rem 0;
-  line-height: 1.6;
-  margin: 3rem;
-  
-}
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 1.5rem;
 
-  font-size: 0.9rem;
-  opacity: 0.9;
+.descripcion {
+    margin: 1rem 0;
+    line-height: 1.6;
+    margin: 3rem;
+
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
+
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
 .info-grid strong {
-  color: var(--color-primary);
+    color: var(--color-primary);
 }
 
 .btn-detalle {
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
 
-  background-color: var(--form-shadow);
-  color: var(--form-bg);
+    background-color: var(--form-shadow);
+    color: var(--form-bg);
 
-  border-radius: 5px;
-  font-weight: bold;
+    border-radius: 5px;
+    font-weight: bold;
 
-  display: inline-block;
+    display: inline-block;
 }
 
 .btn-detalle:hover {
-  background-color: #ddd;
+    background-color: #ddd;
 }
+
+
